@@ -13,10 +13,13 @@ st.sidebar.write('modify these then press Start/Restart on the right')
 lead_first_name = st.sidebar.text_input("Lead First Name", value = "Susan")
 lead_last_name = st.sidebar.text_input("Lead Last Name", value = "Smith")
 lead_email = st.sidebar.text_input("Lead Email", value = "susan@gmail.com")
-booking_link = st.sidebar.text_input("Booking Link", value = "www.chilipiper.com/spoton/firstname%lastname%phone_number=True%SFID=True")
+lead_company = st.sidebar.text_input("Lead Company", value = "Acme Co")
+lead_source_notes = st.sidebar.text_input("Lead Source Notes", value = "Client Type: CPG Company Average Annual Sales: Between $100K - $1MM Quantity: Less than a pallet Frequency: Weekly Type: Certified Organic Commodities: produce Spot or Contract:  Looking for a spot buy")
+platform_commodity_profile = st.sidebar.text_input("Platform Commodity Profile", value = "Apple, Pear, Soft Fruit, Cherry, Potato, Onion, Carrot")
+booking_link = st.sidebar.text_input("Booking Link", value = "https://calendly.com/justin-munro1/30min")
 temp = 0#st.sidebar.slider("Temperature", min_value = 0.0, max_value = 1.0, value = 0.0, step = 0.1)
-model = "gpt-4-1106-preview"#st.sidebar.selectbox("Model", ["gpt-4-1106-preview", "gpt-3.5-turbo"])
-max_tokens = 200#st.sidebar.slider("Max Tokens", min_value = 50, max_value = 500, value = 200, step = 50)
+model = "gpt-4-turbo"#st.sidebar.selectbox("Model", ["gpt-4-1106-preview", "gpt-3.5-turbo"])
+max_tokens = 250#st.sidebar.slider("Max Tokens", min_value = 50, max_value = 500, value = 200, step = 50)
 ####Main Bar
     
 
@@ -30,6 +33,9 @@ if st.button("Start/Restart"):
     st.session_state.messages = []
     st.session_state.lead_first_name = lead_first_name
     st.session_state.lead_last_name = lead_last_name
+    st.session_state.lead_company = lead_company
+    st.session_state.lead_source_notes = lead_source_notes
+    st.session_state.platform_commodity_profile = platform_commodity_profile
     st.session_state.lead_email = lead_email
     st.session_state.booking_link = booking_link
     st.session_state.temp = temp
