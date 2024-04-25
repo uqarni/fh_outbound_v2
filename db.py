@@ -1,5 +1,8 @@
 from supabase import create_client, Client
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def initialize_prompt_and_text(session_state):
     #connect to supabase database
